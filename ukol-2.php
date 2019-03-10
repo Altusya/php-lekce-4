@@ -23,10 +23,24 @@
             </tr>
         </thead>
         <tr>
-            <td>123</td>
+            <?php $handle = fopen('objednavky.csv','r');
+            if ($handle !== false) {
+
+    while (($line = fgets($handle, 4096)) !== false) {
+        echo '<tr>';
+        $exploded = explode(';', $line);
+
+        foreach ($exploded as $item)
+
+            echo "<td>$item</td>"; // zde se vypíše jeden řádek souboru
+    }
+    fclose($handle);
+}
+          /*  <td>123</td>
             <td>Josef</td>
             <td>1.1.2000</td>
-            <td>0 Kč</td>
+            <td>0 Kč</td> */
+            ?>
         </tr>
     </table>
 </div>
