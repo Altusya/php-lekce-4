@@ -9,7 +9,7 @@ function minimum ($prvnicislo, $druhecislo){
     else { return false;}
 }
 
-$min = minimum (56,12.3);
+$min = minimum ('56',12.3);
 
 if (!$min === false) {
 
